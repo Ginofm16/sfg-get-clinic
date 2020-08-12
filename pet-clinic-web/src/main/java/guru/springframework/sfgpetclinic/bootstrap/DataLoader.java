@@ -4,8 +4,6 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.VetService;
-import guru.springframework.sfgpetclinic.services.map.OwnerServiceMap;
-import guru.springframework.sfgpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +14,20 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
+    /*se realiza la inyeccion de dependencia en el constructor, constructor que va requerir Spring
+    * y Spring Inversion Control Container va conectar esos componenetes para nosotros porque
+    * se ha agregado la anotacion para esto(@Service, en los ServiceMap)*/
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
+    }
+    /*
     public DataLoader() {
         ownerService = new OwnerServiceMap();
         vetService = new VetServiceMap();
-    }
+    }*/
+
+
 
     /*cuando el Spring Context esta completo y listo, va llamar a este metodo de ejecucion
     * y ejecuta todo dentro de ella*/
