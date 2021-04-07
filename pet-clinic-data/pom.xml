@@ -11,6 +11,10 @@
 
     <artifactId>pet-clinic-data</artifactId>
 
+    <!--establecer esta propiedad para poder correr y generar el jar sin problemas. Porque
+    Maven esta tratando de hacer con SpringBoot volver a empaquetarlo y al volver a hacerlo
+    va ha hacer una gran jar que contendra todas las dependencias, y lo que se quiere es
+    un jar liviano normal-->
     <properties>
         <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>

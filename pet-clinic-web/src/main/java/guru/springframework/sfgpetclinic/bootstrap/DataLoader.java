@@ -10,6 +10,9 @@ import java.time.LocalDate;
 /**
  * Created by jt on 7/25/18.
  */
+/*Para llevar datos de inicio para el proyecto, con el que se puede
+* trabajar. Esto ser para una implementacion de datos en Map, hashmap en memoria.*/
+/*CommandLineRunner, interface de springboot que ayuda a inicializar datos*/
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -19,6 +22,11 @@ public class DataLoader implements CommandLineRunner {
     private final SpecialtyService specialtyService;
     private final VisitService visitService;
 
+    /*aca se esta inyectando por ejemplo a la interfaz OwmerService, y cualquier implementacion
+    * de esta interfaz que este en contexto de spring se va conectar automaticamente asi
+    * se encuentre en otro modulo.
+    * Spring Inversion Control Container conectara estos componentes por nosotrso porque
+    * se agrego anotaciones a ellos, ahora estan disponibles */
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
                       SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;

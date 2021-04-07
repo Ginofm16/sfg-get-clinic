@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+/*al poner el Service se traera este ya componente al contexto de spring beans, Spring
+* ve este servicio y lo va incluir en el contexto al inicio*/
 @Service
 @Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {

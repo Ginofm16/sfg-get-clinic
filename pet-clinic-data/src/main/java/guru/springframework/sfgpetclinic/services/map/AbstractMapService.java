@@ -4,6 +4,7 @@ import guru.springframework.sfgpetclinic.model.BaseEntity;
 
 import java.util.*;
 
+/*se extiende de BaseEmtity para tener disponible el metodo getId*/
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
     protected Map<Long, T> map = new HashMap<>();
